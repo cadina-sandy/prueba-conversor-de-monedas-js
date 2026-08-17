@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de monedas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- contenedor principal de la pagina -->
+  <main class="conversor">
+
+    <!-- titulo y pequeña descripcion -->
+    <header class="encabezado">
+      <p class="eyebrow">CONVERSOR NACIONAL</p>
+      <h1>Conversor de monedas</h1>
+      <p class="intro">Calcula el valor de tus pesos chilenos y revisa los últimos cambios de la moneda.</p>
+    </header>
+
+
+    <section class="contenido">
+
+      <!-- formulario para hacer la conversion -->
+      <form id="formulario" class="formulario">
+
+        <div class="grupo">
+          <label for="monto">Pesos CLP</label>
+          <input id="monto" type="number" min="1" step="1" placeholder="Ingrese el monto en CLP" required>
+        </div>
+
+
+        <div class="grupo">
+          <label for="moneda">Moneda a convertir</label>
+          <select id="moneda" required>
+            <option value="">Seleccione moneda</option>
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="uf">UF</option>
+          </select>
+        </div>
+
+
+        <button type="submit">Buscar</button>
+
+        <p id="mensaje" class="mensaje" aria-live="polite"></p>
+        <div id="resultado" class="resultado" aria-live="polite">Ingresa los datos para comenzar</div>
+
+      </form>
+
+
+      <!-- seccion donde se muestra el grafico -->
+      <section class="grafico-seccion">
+
+        <div class="titulo-grafico">
+          <div>
+            <p class="eyebrow">ÚLTIMOS 10 DÍAS</p>
+            <h2>Historial de la moneda</h2>
+          </div>
+          <span id="monedaActual">Sin selección</span>
+        </div>
+
+        <div class="grafico-contenedor">
+          <canvas id="grafico"></canvas>
+          <p id="graficoVacio">El gráfico aparecerá después de realizar una conversión.</p>
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- libreria para crear el grafico -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

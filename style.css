@@ -1,0 +1,231 @@
+:root {
+  /* colores parecidos a los que use en el proyecto anterior */
+  --verde: #1d8558;
+  --verde-oscuro: #126941;
+  --verde-claro: #eaf6ef;
+  --texto: #20251f;
+  --suave: #66706a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* fondo general */
+  margin: 0;
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+  color: var(--texto);
+  background: linear-gradient(145deg, #f3f6f1, #e4eee7);
+}
+
+.conversor {
+  /* tarjeta principal */
+  width: min(100%, 920px);
+  margin: auto;
+  background: white;
+  border-radius: 22px;
+  padding: 44px;
+  box-shadow: 0 18px 55px #283a2d1a;
+}
+
+.encabezado {
+  padding-bottom: 28px;
+  border-bottom: 1px solid #dfe5df;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 54px);
+  letter-spacing: -2px;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: var(--suave);
+  line-height: 1.55;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 35px;
+  padding-top: 30px;
+}
+
+.formulario {
+   /* parte donde se escriben los datos */
+   align-self: start;
+  padding: 24px;
+  background: var(--verde-claro);
+  border: 1px solid #d4e9da;
+  border-radius: 15px;
+}
+
+.grupo {
+  margin-bottom: 17px;
+}
+
+.grupo label {
+  display: block;
+  margin: 0 0 8px 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cbd7cd;
+  border-radius: 10px;
+  background: white;
+  color: var(--texto);
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px #1d855819;
+}
+
+button {
+ width: 100%;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--verde);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+button:hover {
+  background: var(--verde-oscuro);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+.mensaje {
+  min-height: 18px;
+  margin: 9px 2px 0;
+  color: #b53f3f;
+  font-size: 13px;
+}
+
+.resultado {
+  /* aqui queda el resultado final */
+  margin-top: 11px;
+  padding: 15px 12px;
+  border-radius: 10px;
+  background: white;
+  color: var(--suave);
+  text-align: center;
+  font-size: 14px;
+}
+
+.resultado strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--verde);
+  font-size: 26px;
+}
+
+.grafico-seccion {
+  min-width: 0;
+}
+
+.titulo-grafico {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: start;
+  margin: 2px 0 24px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.titulo-grafico span {
+  padding: 8px 11px;
+  border-radius: 20px;
+  background: var(--verde-claro);
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.grafico-contenedor {
+  position: relative;
+  min-height: 330px;
+  padding: 18px 14px 10px;
+  border: 1px solid #e4e9e4;
+  border-radius: 14px;
+}
+
+#graficoVacio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  margin: 0;
+  color: var(--suave);
+  text-align: center;
+  line-height: 1.5;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 760px) {
+  /* ajustes para que se vea bien en celular */
+  body {
+    padding: 22px 12px;
+  }
+
+  .conversor {
+    padding: 28px 20px;
+  }
+
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .formulario {
+    max-width: 440px;
+    width: 100%;
+  }
+
+ .grafico-contenedor {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 430px) {
+  .titulo-grafico {
+    display: block;
+  }
+
+  .titulo-grafico span {
+    display: inline-block;
+    margin-top: 13px;
+  }
+}

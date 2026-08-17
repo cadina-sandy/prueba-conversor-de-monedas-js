@@ -1,0 +1,7 @@
+# archivos temporales usados para revisar el proyecto
+tmp/
+
+# instrucciones internas del espacio de trabajo
+AGENTS.md
+.agents/
+.codex/
